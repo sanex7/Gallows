@@ -1,0 +1,13 @@
+tree
+mouse
+apple
+orange
+pen
+paper
+keys
+lock
+telephone
+jack
+monitor
+cable
+headset

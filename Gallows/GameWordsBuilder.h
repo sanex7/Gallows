@@ -16,12 +16,18 @@ public:
 		buffer = manager->GetWords();
 	}
 
-	GameWord GetRandomWord()
-	{
-		auto&& first = buffer.begin();
-		GameWord result(*first);
-		buffer.erase(first);
-		return result;
-	}
+	GameWord GameWordsBuilder::GetRandomWord()
+{
+    if (buffer.empty()) {
+        // Якщо немає слів, повертаємо порожнє слово
+        return GameWord("");
+    }
+
+    auto&& first = buffer.begin();
+    GameWord result(*first);
+    buffer.erase(first);
+    return result;
+}
+
 };
 

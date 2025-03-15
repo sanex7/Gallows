@@ -29,23 +29,29 @@ public:
 		return words;
 	}
 
-	void Load()
-	{
-		std::fstream input("words.txt", ios::in);
-		if (input.is_open())
-		{
-			string word;
-			while (true)
-			{
-				input >> word;
-				words.emplace_back(word);
-			}
-		}
-	}
+	void WordsManager::Load()
+{
+    std::fstream input("words.txt", ios::in);
+    if (input.is_open())
+    {
+        string word;
+        while (input >> word)
+        {
+            words.emplace_back(word);
+        }
+    }
+    input.close();
+}
 
-	void Append(std::string& word)
-	{
-	
-	}
+void WordsManager::Append(std::string& word)
+{
+    std::fstream output("words.txt", ios::app);
+    if (output.is_open())
+    {
+        output << word << std::endl;
+    }
+    output.close();
+}
+
 };
 

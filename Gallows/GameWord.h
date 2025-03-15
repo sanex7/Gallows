@@ -15,7 +15,7 @@ public:
 		external_word(word)
 	{}
 
-	bool InputLetter(char letter)
+	bool GameWorld:InputLetter(char letter)
 	{
 		bool flag = false;
 		for (size_t i = 0; i < hidden_word.length(); i++)

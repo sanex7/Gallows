@@ -11,6 +11,8 @@ int main()
 	//std::cout << view->GetInputLetter() << std::endl;
 
 	//delete view;
+	MainMenu menu;
+    	menu.DisplayMenu();
 	WordsManager manager;
 	ConsoleGameView consoleView;
 	Game game(std::make_shared< WordsManager>(manager), std::make_unique<ConsoleGameView>(consoleView);
